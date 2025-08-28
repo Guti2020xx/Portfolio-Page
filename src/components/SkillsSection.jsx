@@ -13,6 +13,7 @@ const SkillsSection = () => {
     "T-SQL",
     "Microsoft SQL Server",
     "AWS",
+    "Azure",
     "Git",
     "HTML",
     "CSS",

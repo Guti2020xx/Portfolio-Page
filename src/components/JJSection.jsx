@@ -1,7 +1,16 @@
-import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, Check, Clipboard, ChevronDown } from "lucide-react";
+import { useState } from "react";
 import jj from "../assets/jj.jpg";
 
 const JJSection = () => {
+
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText("jjguti2023@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 5000); // reset after 5s
+  };
+
   return (
     <section
       id="home"
@@ -57,11 +66,22 @@ const JJSection = () => {
           >
             <Linkedin size={24} />
           </a>
-          <a href="mailto: jjguti2023@gmail.com" className="btn-social">
-            <Mail size={24} />
-          </a>
-        </div>
 
+          <button onClick={handleCopy} 
+             className={`flex items-center gap-2 px-4 py-2 rounded-lg shadow-md transition-colors duration-300 
+                           ${copied ? "bg-green-600 text-white" : "bg-gray-800 text-gray-200 hover:bg-blue-600"}
+                      `}>
+
+              {copied ? 
+              //if copied
+              (<> <span>Copied</span> <Check size={20} className="group-hover animate-cartoon-bounce" /> </> ) 
+              : // else
+              (<><Mail size={20} /> 
+                 <span>jjguti2023@gmail.com</span> 
+                 <Clipboard size ={20} className="group-hover: animate-wiggle"/> </>)}
+          </button>
+
+        </div>
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ChevronDown size={32} className="text-blue-400" />
         </div>

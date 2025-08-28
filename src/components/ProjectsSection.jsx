@@ -1,8 +1,9 @@
-import { useState } from "react"
-import { Github, ExternalLink } from "lucide-react"
+import { useState, useEffect } from "react";
+import { Github } from "lucide-react";
 
 const ProjectsSection = () => {
-  const [activeFilter, setActiveFilter] = useState("All")
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [visibleProjects, setVisibleProjects] = useState([]);
 
   const projects = [
     {
@@ -45,12 +46,21 @@ const ProjectsSection = () => {
       type: "AI/ML",
       github: "https://github.com/Guti2020xx/Smart-Home-Ai-Agent",
     },
-  ]
+  ];
 
-  const filterTypes = ["All", "Full-Stack", "Backend", "AI/ML"]
+  const filterTypes = ["All", "Full-Stack", "Backend", "AI/ML"];
 
   const filteredProjects =
-    activeFilter === "All" ? projects : projects.filter((project) => project.type === activeFilter)
+    activeFilter === "All" ? projects : projects.filter((p) => p.type === activeFilter);
+
+  useEffect(() => {
+    setVisibleProjects([]);
+    filteredProjects.forEach((project, i) => {
+      setTimeout(() => {
+        setVisibleProjects((prev) => [...prev, project]);
+      }, i * 150); // stagger each card by 150ms
+    });
+  }, [activeFilter]);
 
   return (
     <section id="projects" className="py-20 px-4 bg-gray-900">
@@ -70,7 +80,9 @@ const ProjectsSection = () => {
                 key={type}
                 onClick={() => setActiveFilter(type)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeFilter === type ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                  activeFilter === type
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                 }`}
               >
                 {type}
@@ -80,10 +92,11 @@ const ProjectsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <div
-              key={index}
-              className="bg-gray-800 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 group"
+              key={project.title}
+              className="bg-gray-800 rounded-xl overflow-hidden transform animate-slide-in-left group"
+              style={{ animationDelay: `${index * 150}ms` }} // stagger animations
             >
               <div className="relative overflow-hidden">
                 <img
@@ -102,7 +115,10 @@ const ProjectsSection = () => {
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="px-3 py-1 bg-gray-700 text-gray-300 text-sm rounded-full">
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-gray-700 text-gray-300 text-sm rounded-full"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -125,7 +141,7 @@ const ProjectsSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectsSection
+export default ProjectsSection;
