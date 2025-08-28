@@ -46,7 +46,7 @@ const ProjectsSection = () => {
     },
     {
       title: "SmartHome Agentic AI Assistant",
-      description: "Intelligent chatbot using OpenAI API with context awareness",
+      description: "Intelligent Assistant that is fed data and then simulates smarthome activity for optimized economy and comfortability. Designed to run on a rapberry Pi Zero and then hook up to sensors.",
       image: smarthomepic,
       technologies: ["Python","PyTorch","ONNX","SciKit Learn"],
       type: "AI/ML",
