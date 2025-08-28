@@ -10,6 +10,7 @@ const SkillsSection = () => {
     "Node.js",
     "MongoDB",
     "PostgreSQL",
+    "PowerBI",
     "T-SQL",
     "Microsoft SQL Server",
     "AWS",
