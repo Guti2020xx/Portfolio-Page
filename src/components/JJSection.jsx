@@ -22,7 +22,7 @@ const JJSection = () => {
         <div className="mb-8 flex justify-center">
           <div className="relative">
             <img
-              src={jj}
+               src={jj}
               alt="Test"
               className="profile-pic"
             />

@@ -10,11 +10,11 @@ function App() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
-      {/* <main> */}
+       <main>
         <JJSection />
         <SkillsSection />
         <ProjectsSection />
-      {/* </main> */}
+      </main>
       <footer className="bg-gray-900 py-8 px-4 text-center">
         <p className="text-gray-400">© {new Date().getFullYear()} Juan Gutierrez</p>
       </footer>
