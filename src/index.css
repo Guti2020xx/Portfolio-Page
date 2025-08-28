@@ -135,7 +135,7 @@
     transform: translateX(0) rotate(0deg);
   }
 }
-
+ /* check if something here might be the issue*/
 .animate-slide-in-left {
   animation: slide-in-left 0.8s forwards;
 }
