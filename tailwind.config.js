@@ -2,6 +2,7 @@
 import defaultConfig from "shadcn/ui/tailwind.config";
 import tailwindcssAnimate from "tailwindcss-animate";
 
+
 export default {
   ...defaultConfig,
   content: [
