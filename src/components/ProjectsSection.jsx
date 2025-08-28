@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { Github, ExternalLink } from "lucide-react"
 
@@ -8,62 +6,48 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration",
+      title: "UshopiTrack",
+      description: "Full-stack e-commerce order solution with React, Node.js, and Python integration.",
       image: "/modern-ecommerce-interface.png",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      technologies: ["React", "Materials UI", "Node.js", "MongoDB", "Gmail Oauth","FastAPI","OpenAI"],
       type: "Full-Stack",
-      github: "https://github.com/yourusername/ecommerce",
-      demo: "https://your-ecommerce-demo.com",
+      github: "https://github.com/Guti2020xx/UshopITrack",
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management with real-time updates and team features",
+      title: "Maestro Inventory Management App",
+      description: "Simulative Inventory Order Management System!",
       image: "/task-management-dashboard.png",
-      technologies: ["React", "Firebase", "Material-UI"],
-      type: "Frontend",
-      github: "https://github.com/yourusername/task-manager",
-      demo: "https://your-task-manager.com",
-    },
-    {
-      title: "Weather API Service",
-      description: "RESTful API service providing weather data with caching and rate limiting",
-      image: "/weather-api-dashboard.png",
-      technologies: ["Node.js", "Express", "Redis", "PostgreSQL"],
+      technologies: ["C#", "Microsoft SQL Server","T-SQL", "Windows Forms"],
       type: "Backend",
-      github: "https://github.com/yourusername/weather-api",
-      demo: "https://your-weather-api.com",
+      github: "https://github.com/Guti2020xx/C-Maestro-Application",
     },
     {
-      title: "Mobile Fitness Tracker",
-      description: "React Native app for tracking workouts and fitness goals",
+      title: "S&P 500 Market Prediction",
+      description: "Machine Learning Model to predict Stock Market Prices that Achieved a 57% prediction Accuracy on Stock Movement Prediction. ",
+      image: "/weather-api-dashboard.png",
+      technologies: ["Python", "SciKit Learn", "APIs"],
+      type: "AI/ML",
+      github: "https://github.com/Guti2020xx/S-P-500-Stock-Prediction-Machine-Learning-Project",
+    },
+    {
+      title: "Fix it Rattler",
+      description: "PHP to enhance St. Mary’s University’s handling and automation of their facility’s maintenance issues.",
       image: "/fitness-mobile-app-interface.png",
-      technologies: ["React Native", "Expo", "SQLite"],
-      type: "Mobile",
-      github: "https://github.com/yourusername/fitness-tracker",
-      demo: "https://expo.dev/@yourusername/fitness-tracker",
+      technologies: ["PHP", "XAMPP", "Microsoft SQL Server", "T-SQL"],
+      type: "FullStack",
+      github: "https://github.com/Guti2020xx/FixItRattler-BackUP",
     },
     {
-      title: "AI Chat Assistant",
+      title: "SmartHome Agentic AI Assistant",
       description: "Intelligent chatbot using OpenAI API with context awareness",
       image: "/ai-chatbot-interface.png",
-      technologies: ["Python", "OpenAI API", "Flask", "React"],
+      technologies: ["Python","PyTorch","ONNX"],
       type: "AI/ML",
-      github: "https://github.com/yourusername/ai-chat",
-      demo: "https://your-ai-chat.com",
-    },
-    {
-      title: "Portfolio Website",
-      description: "Responsive portfolio website built with modern web technologies",
-      image: "/portfolio-website-showcase.png",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      type: "Frontend",
-      github: "https://github.com/yourusername/portfolio",
-      demo: "https://yourname.github.io",
+      github: "https://github.com/Guti2020xx/Smart-Home-Ai-Agent",
     },
   ]
 
-  const filterTypes = ["All", "Full-Stack", "Frontend", "Backend", "Mobile", "AI/ML"]
+  const filterTypes = ["All", "Full-Stack", "Backend", "AI/ML"]
 
   const filteredProjects =
     activeFilter === "All" ? projects : projects.filter((project) => project.type === activeFilter)
@@ -133,15 +117,6 @@ const ProjectsSection = () => {
                   >
                     <Github size={18} />
                     <span>Code</span>
-                  </a>
-                  <a
-                    href={project.demo}
-                    className="flex items-center space-x-2 text-gray-400 hover:text-blue-400 transition-colors duration-200"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink size={18} />
-                    <span>Demo</span>
                   </a>
                 </div>
               </div>

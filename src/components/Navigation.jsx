@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
@@ -19,18 +17,17 @@ const Navigation = () => {
     { href: "#home", label: "Home" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
   ]
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/90 backdrop-blur-md border-b border-gray-800" : "bg-transparent"
+        scrolled ? "bg-black/90 backdrop-blur-md border-b border-gray-800" : "bg-black"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="font-display font-bold text-xl text-blue-500">Portfolio</div>
+          <div className="font-display font-bold text-xl text-blue-500">Portfolio Website</div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
